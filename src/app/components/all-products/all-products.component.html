@@ -1,0 +1,32 @@
+<div style="color: red">
+  In this red area is displayed the all-products component and his children
+  (like the product-view component)within another router outlet in all-products
+  component
+</div>
+<div
+  style="
+    border: 5px solid red;
+    height: 200px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  "
+>
+  <div style="width: 100%">
+    <ul style="margin: 0; padding: 0">
+      <li
+        *ngFor="let product of myDataService.getAllProducts(); index as i"
+        style="margin: 10px; list-style: none"
+      >
+        <a routerLink="product/{{ i }}">
+          Name: {{ product.name }} | Category: {{ product.category }} | Price:
+          {{ product.price }} | Discount: {{ product.percentDiscount }}%</a
+        >
+      </li>
+    </ul>
+  </div>
+  <div style="width: 100%">
+    <router-outlet></router-outlet>
+  </div>
+</div>

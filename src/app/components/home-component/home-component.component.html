@@ -1,0 +1,72 @@
+<h2>STRING INTERPOLATION</h2>
+<div>
+  This is my propertyBinding variable :
+  <span style="color: red">{{ stringInterpolation }}</span>
+</div>
+<hr />
+
+<h2>EVENT BINDING</h2>
+<div>
+  This is my eventBindingVar value :
+  <span style="color: red">{{ eventBindingVar }}</span>
+</div>
+<br /><br />
+<div>This is the input to change my eventBindingVar value</div>
+<br /><br />
+<input type="text" value="nessun valore" (keyup)="myOnInput($event)" />
+<br /><br />
+<div>
+  This is the button to reset my eventBindingVar value with: 'nessun valore'
+</div>
+<br /><br />
+<button (click)="myOnClick($event)">Reset value</button>
+
+<hr />
+<h2>2 WAY BINDING</h2>
+<div>
+  This is my twoWayBindingVar value :
+  <span style="color: red">{{ twoWayBindingVar }}</span>
+</div>
+<br /><br />
+<div>This is the input to change my twoWayBindingVar value</div>
+<br /><br />
+<form name="standalone" action="">
+  <input
+    name="myInput1"
+    type="text"
+    value="valore iniziale"
+    [(ngModel)]="twoWayBindingVar"
+    (input)="myOnInputTwoWay($event)"
+  />
+</form>
+
+<br /><br />
+<div>
+  This is the button to reset my twoWayBindingVar value with: 'valore di reset'
+</div>
+<br /><br />
+<button (click)="myOnClickTwoWay($event)">Reset value</button>
+
+<hr />
+
+<a routerLink="all-products" style="margin: 10px">All products</a>
+<a routerLink="" style="margin: 10px">Laptop</a>
+<a routerLink="" style="margin: 10px">Phones</a>
+
+<br /><br />
+
+<div style="color: green">
+  In this green area are displayed the components from the router-link in Home
+  Component
+</div>
+<div
+  style="
+    border: 5px solid green;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  "
+>
+  <router-outlet></router-outlet>
+</div>
